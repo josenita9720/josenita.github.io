@@ -1,0 +1,442 @@
+function loadSection(section) {
+    const sections = {
+        inicio: `
+            <section id="inicio">
+                <div class="aparecer nome">José Lucas Nita</div>
+                <div class="aparecer idade">23 Anos</div>
+                <div class="aparecer curso">Análise e desenvolvimento de sistemas</div>
+                <div class="aparecer cargo">Especialista de planejamento II</div>
+                <div class="aparecer descricoes">Foco em melhoria contínua e oportunidades dentro das tarefas do time e processos</div>
+                <img src="imagens/foto.jpg" class="aparecer-gradualmente foto2" alt="">
+                <img src="imagens/astronaut-helmet.png" class="astronautacabecao2">
+                <div class="skills-grid2">
+                    <span>JS</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>PGAdmin</span>
+                    <span>Rstudio</span>
+                    <span>VBA</span>
+                    <span>Python</span>
+                    <span>Power BI</span>
+                    <span>SQL</span>
+                </div>
+            </section>
+        `,
+        trajetoria: `
+                <div class="planeta" style="top: 50px; left: 10px;">
+                    <img src="imagens/planeta1.png" alt="">
+                </div>
+                <div class="planeta" style="top: 150px; left: 250px;">
+                    <img src="imagens/planeta2.png" alt="">
+                </div>
+                <div class="planeta" style="top: 250px; left: 500px;">
+                    <img src="imagens/planeta3.png" alt="">
+                </div>
+                <div class="planeta" style="top: 350px; left: 750px;">
+                    <img src="imagens/planeta4.png" alt="">
+                </div>
+                <div class="planeta" style="top: 450px; left: 1000px;">
+                    <img src="imagens/planeta5.png" alt=""">
+                </div>
+                <div class="planeta" style="top: 530px; left: 1250px;">
+                    <img src="imagens/planeta6.png" alt=""">
+                </div>
+            </section>
+        `,
+            projetos: `
+                <section id="projetos">
+                    <div class="cometa">
+                            <img src="imagens/comet.png" alt="Cometa" class="cometa-img">
+                        </div>
+                    <div class="projetos direita fade-only-in" style="top: -75px; right: 200px;">
+                        <div class="conteudo">
+                            <img src="imagens/Bi.png" alt="">
+                        </div>
+                        <div class="texto">Painel de acompanhamento  Licenças Aspect</div>
+                    </div>
+                    <div class="projetos esquerda fade-only-in" style="top: 150px; left: 200px;">
+                        <div class="conteudo">
+                            <img src="imagens/bi1.png" alt="">
+                        </div>
+                        <div class="texto">Painel de acompanhamento Blocklist</div>
+                    </div>
+                    <div class="projetos direita fade-only-in" style="top: 375px; right: 200px;">
+                        <div class="conteudo">
+                            <video class="video-projeto" autoplay muted loop playsinline>
+                                <source src="imagens/filtros.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="texto">Script para ajuste dos filtros nas campanhas que são utilizadas no Aspect</div>
+                    </div>
+                    <div class="projetos esquerda fade-only-in" style="top: 600px; left: 200px;">
+                        <div class="conteudo">
+                            <video class="video-projeto" autoplay muted loop playsinline>
+                                <source src="imagens/derruba login1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="texto">Script para Derrubar os ci's que estão excedendo o tempo logado no Aspect</div>
+                    </div>
+                    <div class="projetos direita fade-only-in" style="top: 825px; right: 200px;">
+                        <div class="conteudo">
+                            <video class="video-projeto" autoplay muted loop playsinline>
+                                <source src="imagens/Prioridade.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="texto">Script para fazer as prioridades no Aspect</div>
+                    </div>
+                    <div class="projetos esquerda fade-only-in" style="top: 1050px; left: 200px;">
+                        <div class="conteudo">
+                            <img src="imagens/dashmanipulacao.png" alt="">
+                        </div>
+                        <div class="texto">Painel de acompanhamento hora x hora por localhost</div>
+                    </div>
+                    </div>
+                    <div class="projetos direita fade-only-in" style="top: 1275px; right: 200px;">
+                        <div class="conteudo">
+                            <img src="imagens/BI2.png" alt="">
+                        </div>
+                        <div class="texto">Painel Entrantes receptivos</div>
+                    </div>
+                    <div class="buraco-container">
+                        <img src="imagens/black-hole.png" alt="buraco negro" class="black-hole-img">
+                        <div class="buraco-texto">Raw e Base unificada simples (R)</div>
+                    </div>
+                </section>
+            `,
+        Conquistas: `
+                <section id="Conquistas">
+                    <div class="icon-container">
+                        <div class="icon" onclick="showImage(1)">
+                        <img src="imagens/python.png" alt="Icone 1">
+                        <span class="tooltip">Python</span>
+                        </div>
+                        <div class="icon" onclick="showImage(2)">
+                        <img src="imagens/java-script.png" alt="Icone 2">
+                        <span class="tooltip">JavaScript</span>
+                        </div>
+                        <div class="icon" onclick="showImage(3)">
+                        <img src="imagens/excel.png" alt="Icone 3">
+                        <span class="tooltip">Excel/VBA</span>
+                        </div>
+                        <div class="icon" onclick="showImage(4)">
+                        <img src="imagens/business.png" alt="Icone 4">
+                        <span class="tooltip">Power BI</span>
+                        </div>
+                        <div class="icon" onclick="showImage(5)">
+                        <img src="imagens/sql-server.png" alt="Icone 5">
+                        <span class="tooltip">SQL</span>
+                        </div>
+                        <div class="icon" onclick="showImage(6)">
+                        <img src="imagens/interpersonal-skills.png" alt="Icone 6">
+                        <span class="tooltip">Soft Skills</span>
+                        </div>
+                        <div class="icon" onclick="showImage(7)">
+                        <img src="imagens/trophy-star.png" alt="Icone 7">
+                        <span class="tooltip">Conquistas Pessoais</span>
+                        </div>
+                    </div>
+                    <div class="image-track" id="imageTrack">
+                    <div class="image-box show" data-icon="5">
+                            <img src="imagens/SQL Server_ consultas avançadas com Microsoft SQL Server 2017.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="1">
+                            <img src="imagens/Python_ começando com a linguagem.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="4">
+                            <img src="imagens/Power BI Desktop_ construindo meu primeiro dashboard.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="6">
+                            <img src="imagens/Oratória_ conquiste a atenção do seu público.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="6">
+                            <img src="imagens/Oratória para líderes_ como se comunicar profissionalmente.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="5">
+                            <img src="imagens/Microsoft SQL Server 2022_ conhecendo SQL.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="2">
+                            <img src="imagens/Curso Java fundamentals.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="3">
+                            <img src="imagens/Excel_ domine o editor de planilhas.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="4">
+                            <img src="imagens/Dashboard com Power BI_ visualizando dados.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="6">
+                            <img src="imagens/como se expressar bem e ser compreendido.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="6">
+                            <img src="imagens/Feedback efetivo_ utilizando ferramentas para comunicação transformadora.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="6">
+                            <img src="imagens/Comunicação_ como se expressar bem e ser compreendido.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="6">
+                            <img src="imagens/Liderança_ aprendendo sobre a missão e propósito de liderar pessoas.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="6">
+                            <img src="imagens/Oratória_ supere desafios com confiança.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="2">
+                            <img src="imagens/JavaScript_ explorando a linguagem.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="1">
+                            <img src="imagens/Django_ templates e boas práticas.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="6">
+                            <img src="imagens/Comunicação não violenta_ consciência para agir.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="6">
+                            <img src="imagens/Comunicação não violenta parte 2_ mantendo a empatia.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="2">
+                            <img src="imagens/Curso Java Foundations.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="2">
+                            <img src="imagens/Curso Java Fundamentals (2).png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="4">
+                            <img src="imagens/Curso Power BI.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="4">
+                            <img src="imagens/Curso DP900.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="7">
+                            <img src="imagens/META.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="7">
+                            <img src="imagens/LHAMA4.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="7">
+                            <img src="imagens/LHAMA5.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="7">
+                            <img src="imagens/LINKEDIN2.png" alt="">
+                        </div>
+                    <div class="image-box show" data-icon="7">
+                            <img src="imagens/LHAMA6.png" alt="">
+                        </div>
+                </section>
+        `,
+        contato: `
+                <section id="contato">
+                    <h2>Contate</h2>
+                    <div class="redes-sociais fade-only-in">
+                        <a href="https://www.facebook.com/jose.lucas.nita.2025/?locale=pt_BR" target="_blank" class="social-icon">
+                            <img src="imagens/facebook.png" alt="Facebook">
+                        </a>
+                        <a href="https://www.instagram.com/jl_nita/" target="_blank" class="social-icon">
+                            <img src="imagens/instagram.png" alt="Instagram">
+                        </a>
+                        <a href="https://www.linkedin.com/in/jose-lucas-nita-5a6905181/" target="_blank" class="social-icon">
+                            <img src="imagens/linkedin.png" alt="LinkedIn">
+                        </a>
+                        <a href="mailto:joselucas9720@gmail.com" class="social-icon">
+                            <img src="imagens/gmail.png" alt="Gmail">
+                        </a>
+                        <a href="https://github.com/josenita9720" target="_blank" class="social-icon">
+                            <img src="imagens/github.png" alt="Gmail">
+                        </a>
+                    <div class="astronauta-container">
+                        <img src="imagens/astronaut.png" alt="Astronauta" class="astronauta-img">
+                    </div>
+                </section>
+            `
+    };
+    // Remove todas as naves de outras seções
+    document.querySelectorAll('.nave').forEach(el => el.remove());
+    // Remove todas as naves de outras seções
+    document.querySelectorAll('.addRandomSpaceships').forEach(el => el.remove());
+    // Remove todas as naves de outras seções
+    document.querySelectorAll('.moveSpaceship').forEach(el => el.remove());
+    // Remove todas as caixas de texto anteriores
+    document.querySelectorAll('.descricao').forEach(el => el.remove());
+    // Carrega a seção na div #conteudo
+    document.getElementById('conteudo').innerHTML = sections[section] || '<p>Seção não encontrada.</p>';
+/////////////////////////////////////////////////////////////////TRAJETORIA
+    if (section === 'trajetoria') {
+        drawLinesBetweenPlanets();
+        addTextBoxesToPlanets();
+        addRandomSpaceships();
+        // Espera um pouco para garantir que os elementos estão no DOM
+        setTimeout(() => {
+            const planetas = Array.from(document.querySelectorAll('.planeta')).reverse();
+            const caixasTexto = Array.from(document.querySelectorAll('.descricao')).reverse();
+            planetas.forEach((planeta, index) => {
+                setTimeout(() => {
+                    planeta.classList.add('aparecer');
+                    if (caixasTexto[index]) {
+                        caixasTexto[index].classList.add('magia');
+                    }
+                }, index * 300); // atraso de 300ms entre cada planeta
+            });
+        }, 100); // tempo inicial para garantir que estão renderizados
+    }
+}
+// Função que desenha as linhas entre os planetas com base em suas posições na tela
+function drawLinesBetweenPlanets() {
+    const canvas = document.createElement('canvas');
+    canvas.width = 1800;
+    canvas.height = 700;
+    canvas.style.position = 'absolute';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.pointerEvents = 'none';
+    document.getElementById('conteudo').appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+    const planetas = document.querySelectorAll('.planeta');
+    const posicoes = [];
+    planetas.forEach(planeta => {
+        const img = planeta.querySelector('img');
+        // Precisamos garantir que a imagem foi carregada antes de pegar dimensões
+        if (img.complete) {
+            const top = parseInt(planeta.style.top, 10);
+            const left = parseInt(planeta.style.left, 10);
+            const width = img.offsetWidth;
+            const height = img.offsetHeight;
+            posicoes.push({
+                x: left + width / 2,
+                y: top + height / 2,
+                r: Math.max(width, height) / 2
+            });
+        } else {
+            img.onload = () => drawLinesBetweenPlanets(); // Rechama a função depois do carregamento
+        }
+    });
+    if (posicoes.length < planetas.length) return; // Esperar todas carregarem
+    for (let i = 0; i < posicoes.length - 1; i++) {
+        const p1 = posicoes[i];
+        const p2 = posicoes[i + 1];
+        const dx = p2.x - p1.x;
+        const dy = p2.y - p1.y;
+        const dist = Math.hypot(dx, dy);
+        // Encurta as pontas para não sobrepor os planetas
+        const offsetX = (dx / dist) * p1.r;
+        const offsetY = (dy / dist) * p1.r;
+        ctx.beginPath();
+        ctx.setLineDash([5, 5]); // ← Deixa a linha tracejada
+        ctx.moveTo(p1.x + offsetX, p1.y + offsetY);
+        ctx.lineTo(p2.x - offsetX, p2.y - offsetY);
+        ctx.strokeStyle = "white";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        ctx.closePath();
+    }
+}
+// Função para adicionar caixas de texto ao lado de cada planeta
+function addTextBoxesToPlanets() {
+    const planets = document.querySelectorAll('.planeta');
+    // Texto de descrição pré-definido para cada planeta
+    const descriptions = [
+        { description: "Em breve!", year: "?", company: "?" },
+        { description: "Especialista de Planejamento II.", year: "2024/25", company: "Paschoalotto S.A" },
+        { description: "Analista de BI II.", year: "2023/24", company: "Paschoalotto S.A" },
+        { description: "Analista de BI I.", year: "2022/23", company: "Paschoalotto S.A" },
+        { description: "Assistente de Planejamento.", year: "2022", company: "Paschoalotto S.A" },
+        { description: "Operador de Teleserviços.", year: "2021", company: "Paschoalotto S.A" }
+    ];
+    planets.forEach((planet, index) => {
+        const textBox = document.createElement('textarea');
+        textBox.classList.add('descricao');
+        // Formata a descrição incluindo o ano e a empresa
+        const descriptionText = `${descriptions[index].description}\n${descriptions[index].year}\n${descriptions[index].company}`;
+        textBox.value = descriptionText;  // Preenche a caixa com o texto formatado
+        textBox.readOnly = true;  // Torna a caixa de texto apenas leitura, se necessário
+        textBox.style.position = 'absolute';
+        // Calcula a posição das caixas de texto (acima ou abaixo do planeta)
+        const planetRect = planet.getBoundingClientRect();
+        document.body.appendChild(textBox);
+        // Planetas 6, 5 e 2 terão a caixa de texto acima deles
+        if ([1, 4, 5].includes(index)) {  // Índices 1, 4 e 5 (planetas 2, 5, e 6)
+            textBox.style.top = `${planetRect.top + window.scrollY - 120}px`;
+        } else if ([2, 3].includes(index)) {  // Índices 2 e 3 (planetas 3 e 4)
+            textBox.style.top = `${planetRect.top + window.scrollY + 80}px`;
+        } else {  // Para os outros, a caixa fica abaixo
+            textBox.style.top = `${planetRect.top + window.scrollY + planetRect.height + 100}px`;
+        }
+        textBox.style.left = `${planetRect.left + window.scrollX + (planetRect.width / 2) - (textBox.offsetWidth / 2)}px`;
+        document.body.appendChild(textBox);
+    });
+}
+function addRandomSpaceships() {
+    const spaceshipData = [
+        { emoji: '🚀' },
+        { emoji: '🛸' },
+        { emoji: '🛸' },
+        { emoji: '🚀' },
+        { emoji: '🛰️' },
+        { emoji: '🛰️' } 
+    ];
+    spaceshipData.forEach(data => {
+        // Cria um "elemento" de nave usando o emoji
+        const spaceship = document.createElement('div');
+        spaceship.classList.add('nave');
+        spaceship.innerText = data.emoji;
+        document.body.appendChild(spaceship);
+        // Define a posição inicial aleatória da nave
+        const initialTop = Math.random() * window.innerHeight;
+        const initialLeft = Math.random() * window.innerWidth;
+        spaceship.style.position = 'absolute';
+        spaceship.style.top = `${initialTop}px`;
+        spaceship.style.left = `${initialLeft}px`;
+        // Animação de voo aleatório
+        function moveSpaceship() {
+            // Calcula novas posições aleatórias
+            const newTop = Math.random() * window.innerHeight;
+            const newLeft = Math.random() * window.innerWidth;
+            const animationDuration = 1 + Math.random() * 7; // aleatoriamente entre 3 a 10 segundos
+            spaceship.style.transition = `top ${animationDuration}s linear, left ${animationDuration}s linear`;
+            // Move a nave para uma nova posição
+            spaceship.style.top = `${newTop}px`;
+            spaceship.style.left = `${newLeft}px`;
+            // Chama a função de novo após a animação terminar
+            setTimeout(moveSpaceship, animationDuration * 1000);
+        }
+        // Inicia o movimento aleatório da nave
+        moveSpaceship();
+    });
+}
+///////////////////////////////////////////////TRAJETORIA
+///////////////////////////////////////////////PROJETOS
+if (section === 'projetos') {
+    // Seleciona todos os elementos de projetos
+    const projetos = document.querySelectorAll('.projetos');
+    projetos.forEach(projeto => {
+        // Seleciona a imagem dentro de cada projeto
+        const img = projeto.querySelector('img');
+        // Cria o contêiner de rotação
+        const conteudo = document.createElement('div');
+        conteudo.classList.add('conteudo');
+        // Coloca a imagem dentro do conteudo
+        conteudo.appendChild(img);
+        projeto.appendChild(conteudo);
+        // Adiciona o evento de rotação com o mouse
+        projeto.addEventListener('mouseenter', () => {
+            conteudo.style.transform = 'rotateY(0deg)';
+        });
+        projeto.addEventListener('mouseleave', () => {
+            conteudo.style.transform = 'rotateY(20deg)';
+        });
+    });
+}
+function showImage(iconId) {
+    // Ativa o container da imagem (caso esteja oculto)
+    const imageTrack = document.querySelector('.image-track');
+    imageTrack.classList.add('active');
+    // Oculta todas as imagens
+    const imagens = document.querySelectorAll('.image-box');
+    imagens.forEach(img => {
+        img.style.display = 'none';
+    });
+    // Exibe apenas as que correspondem ao data-icon clicado
+    const imagensDoIcone = document.querySelectorAll(`.image-box[data-icon="${iconId}"]`);
+    imagensDoIcone.forEach(img => {
+        img.style.display = 'block';
+    });
+    imageTrack.classList.add('active');
+    // 🔁 Reinicia animação sempre que for clicado
+    imageTrack.classList.remove('animar');
+    void imageTrack.offsetWidth; // força reflow
+    imageTrack.classList.add('animar');
+}
