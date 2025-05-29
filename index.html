@@ -520,26 +520,22 @@
         let section = window.location.hash.substring(1) || 'home';
         document.getElementById('conteudo').innerHTML = sections[section] || '<p>Seção não encontrada.</p>';
         if (section === 'projetos') {
-            // faz algo...
-            // Seleciona todos os elementos de projetos
-            const projetos = document.querySelectorAll('.projetos');
-            projetos.forEach(projeto => {
-                // Seleciona a imagem dentro de cada projeto
-                const img = projeto.querySelector('img');
-                // Cria o contêiner de rotação
-                const conteudo = document.createElement('div');
-                conteudo.classList.add('conteudo');
-                // Coloca a imagem dentro do conteudo
-                conteudo.appendChild(img);
-                projeto.appendChild(conteudo);
-                // Adiciona o evento de rotação com o mouse
-                projeto.addEventListener('mouseenter', () => {
-                    conteudo.style.transform = 'rotateY(0deg)';
+            setTimeout(() => {
+                const projetos = document.querySelectorAll('.projetos');
+                projetos.forEach(projeto => {
+                    const img = projeto.querySelector('img');
+                    const conteudo = document.createElement('div');
+                    conteudo.classList.add('conteudo');
+                    conteudo.appendChild(img);
+                    projeto.appendChild(conteudo);
+                    projeto.addEventListener('mouseenter', () => {
+                        conteudo.style.transform = 'rotateY(0deg)';
+                    });
+                    projeto.addEventListener('mouseleave', () => {
+                        conteudo.style.transform = 'rotateY(20deg)';
+                    });
                 });
-                projeto.addEventListener('mouseleave', () => {
-                    conteudo.style.transform = 'rotateY(20deg)';
-                });
-            });
+            }, 100); // ou 200ms, para garantir que os elementos renderizem
         }
         function showImage(iconId) {
             // Ativa o container da imagem (caso esteja oculto)
