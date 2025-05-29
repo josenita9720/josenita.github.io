@@ -37,10 +37,10 @@ function loadSection(section) {
                     <img src="imagens/planeta4.png" alt="">
                 </div>
                 <div class="planeta" style="top: 450px; left: 1000px;">
-                    <img src="imagens/planeta5.png" alt=""">
+                    <img src="imagens/planeta5.png" alt="">
                 </div>
                 <div class="planeta" style="top: 530px; left: 1250px;">
-                    <img src="imagens/planeta6.png" alt=""">
+                    <img src="imagens/planeta6.png" alt="">
                 </div>
             </section>
         `,
@@ -90,7 +90,6 @@ function loadSection(section) {
                             <img src="imagens/dashmanipulacao.png" alt="">
                         </div>
                         <div class="texto">Painel de acompanhamento hora x hora por localhost</div>
-                    </div>
                     </div>
                     <div class="projetos direita fade-only-in" style="top: 1275px; right: 200px;">
                         <div class="conteudo">
@@ -239,6 +238,7 @@ function loadSection(section) {
                         <a href="https://github.com/josenita9720" target="_blank" class="social-icon">
                             <img src="imagens/github.png" alt="Gmail">
                         </a>
+                    </div>
                     <div class="astronauta-container">
                         <img src="imagens/astronaut.png" alt="Astronauta" class="astronauta-img">
                     </div>
@@ -399,8 +399,8 @@ function addRandomSpaceships() {
     });
 }
 ///////////////////////////////////////////////TRAJETORIA
-///////////////////////////////////////////////PROJETOS
-if (section === 'projetos') {
+if (section.id === 'projetos') {
+    // faz algo...
     // Seleciona todos os elementos de projetos
     const projetos = document.querySelectorAll('.projetos');
     projetos.forEach(projeto => {
