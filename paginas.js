@@ -23,6 +23,7 @@ function loadSection(section) {
             </section>
         `,
         trajetoria: `
+            <section id="trajetoria">
                 <div class="planeta" style="top: 50px; left: 10px;">
                     <img src="imagens/planeta1.png" alt="">
                 </div>
