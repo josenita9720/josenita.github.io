@@ -519,6 +519,8 @@
         ///////////////////////////////////////////////TRAJETORIA
         let section = window.location.hash.substring(1) || 'home';
         document.getElementById('conteudo').innerHTML = sections[section] || '<p>Seção não encontrada.</p>';
+        console.log('Seção atual:', section);
+        console.log('Sections disponíveis:', sections);
         if (section === 'projetos') {
             setTimeout(() => {
                 const projetos = document.querySelectorAll('.projetos');
