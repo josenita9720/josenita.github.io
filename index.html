@@ -393,6 +393,25 @@
                 }, 100); // tempo inicial para garantir que estão renderizados
             }
         }
+                    ///////////////////////////////////////////////TRAJETORIA
+        if (section === 'projetos') {
+            setTimeout(() => {
+                const projetos = document.querySelectorAll('.projetos');
+                projetos.forEach(projeto => {
+                    const img = projeto.querySelector('img');
+                    const conteudo = document.createElement('div');
+                    conteudo.classList.add('conteudo');
+                    conteudo.appendChild(img);
+                    projeto.appendChild(conteudo);
+                    projeto.addEventListener('mouseenter', () => {
+                        conteudo.style.transform = 'rotateY(0deg)';
+                    });
+                    projeto.addEventListener('mouseleave', () => {
+                        conteudo.style.transform = 'rotateY(20deg)';
+                    });
+                });
+            }, 100); // ou 200ms, para garantir que os elementos renderizem
+        }
         // Função que desenha as linhas entre os planetas com base em suas posições na tela
         function drawLinesBetweenPlanets() {
             const canvas = document.createElement('canvas');
@@ -515,25 +534,6 @@
                 // Inicia o movimento aleatório da nave
                 moveSpaceship();
             });
-        }
-        ///////////////////////////////////////////////TRAJETORIA
-        if (section === 'projetos') {
-            setTimeout(() => {
-                const projetos = document.querySelectorAll('.projetos');
-                projetos.forEach(projeto => {
-                    const img = projeto.querySelector('img');
-                    const conteudo = document.createElement('div');
-                    conteudo.classList.add('conteudo');
-                    conteudo.appendChild(img);
-                    projeto.appendChild(conteudo);
-                    projeto.addEventListener('mouseenter', () => {
-                        conteudo.style.transform = 'rotateY(0deg)';
-                    });
-                    projeto.addEventListener('mouseleave', () => {
-                        conteudo.style.transform = 'rotateY(20deg)';
-                    });
-                });
-            }, 100); // ou 200ms, para garantir que os elementos renderizem
         }
         function showImage(iconId) {
             // Ativa o container da imagem (caso esteja oculto)
